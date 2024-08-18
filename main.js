@@ -69,11 +69,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function endQuiz() {
-        document.getElementById('quiz-card').style.display = 'none';
-        document.getElementById('final-score-card').style.display = 'block';
-        document.getElementById('score').textContent = score;
-        saveScore(username, score);
-        displayScores();
+        if (score === questions.length * 5) {
+            Swal.fire({
+                title: '¡Felicidades!',
+                text: '¡Completaste el quiz con todas las respuestas correctas!',
+                icon: 'success',
+                confirmButtonText: 'Ver puntaje'
+            }).then(() => {
+                document.getElementById('quiz-card').style.display = 'none';
+                document.getElementById('final-score-card').style.display = 'block';
+                document.getElementById('score').textContent = score;
+                saveScore(username, score);
+                displayScores();
+            });
+        } else {
+            document.getElementById('quiz-card').style.display = 'none';
+            document.getElementById('final-score-card').style.display = 'block';
+            document.getElementById('score').textContent = score;
+            saveScore(username, score);
+            displayScores();
+        }
     }
 
     function saveScore(name, score) {
