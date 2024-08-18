@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizVenture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="intro-card" class="card">
+        <h1 class="titulo-h1">QuizVenture</h1>
+        <p class="parrafo-1">¿Crees conocer lo suficiente?</p>
+        <input type="text" id="username-input" placeholder="Ingresa tu nombre">
+        <button id="start-button">Comenzar Quiz</button>
+    </div>
+    <div id="score-card" class="card" style="display: none;">
+        <h2>Puntajes</h2>
+        <ul>
+            <li>50 puntos: "Sos un genio"</li>
+            <li>30 puntos: "Tenes conocimientos"</li>
+            <li>20 puntos: "Estas encaminado"</li>
+            <li>0 puntos: "Deberias estudiar más"</li>
+        </ul>
+        <button id="begin-quiz">Empezar Preguntas</button>
+    </div>
+    <div id="quiz-card" class="card" style="display: none;">
+        <div id="question-container"></div>
+        <input type="text" id="answer-input" placeholder="Tu respuesta">
+        <button id="submit-answer">Enviar Respuesta</button>
+        <p id="feedback"></p>
+    </div>
+    <div id="final-score-card" class="card" style="display: none;">
+        <p>Puntuación: <span id="score">0</span></p>
+        <ul id="final-score-list"></ul>
+        <button id="clear-scores-button">Eliminar Puntajes</button>
+        <button id="restart-button">Reiniciar Quiz</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

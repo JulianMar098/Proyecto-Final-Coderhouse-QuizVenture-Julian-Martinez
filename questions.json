@@ -1,0 +1,26 @@
+[
+    {
+        "question": "¿Cuál es la capital de Francia?",
+        "answer": "París"
+    },
+    {
+        "question": "¿De qué color es el cielo en un dia despejado?",
+        "answer": "Azul"
+    },
+    {
+        "question": "¿Como se llama esta academia?",
+        "answer": "Coderhouse"
+    },
+    {
+        "question": "¿Como se llama el personaje cuya ocupacion es fontanero, famoso por sus diversos videojuegos de la gran N?",
+        "answer": "Mario"
+    },
+    {
+        "question": "¿Y su hermano?",
+        "answer": "Luigi"
+    },
+    {
+        "question": "¿Cual es el nombre del músculo del cuello que permite los movimientos de la cabeza y que se inserta en la clavícula, esternón y la apófisis mastoides?",
+        "answer": "Esternocleidomastoideo"
+    }
+]
