@@ -20,6 +20,12 @@ body {
     text-align: center;
     font-family: New Amsterdam;
     font-size: x-large;
+    overflow: hidden;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
 .card {
@@ -32,6 +38,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .titulo-h1 {
@@ -89,4 +97,32 @@ button:hover {
 
 #quiz-card{
     display: flex;
+}
+
+.swal2-popup {
+    position: fixed;
+    z-index: 1000;
+}
+
+.my-popup {
+    background: linear-gradient(to right, #9307a5dc, #ff00ff);
+    border-radius: 10px;
+}
+
+.my-title {
+    color: black;
+    font-weight: bold;
+}
+
+.my-text {
+    color: #333;
+}
+
+.my-button {
+    background-color: #3c06ff;
+    color: #fff;
+}
+
+.my-button:hover {
+    background-color: #1093df;
 }

@@ -74,7 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: '¡Felicidades!',
                 text: '¡Completaste el quiz con todas las respuestas correctas!',
                 icon: 'success',
-                confirmButtonText: 'Ver puntaje'
+                confirmButtonText: 'Ver puntaje',
+                customClass: {
+                    popup: 'my-popup',
+                    title: 'my-title', 
+                    text: 'my-text',
+                    confirmButton: 'my-button'
+                }
             }).then(() => {
                 document.getElementById('quiz-card').style.display = 'none';
                 document.getElementById('final-score-card').style.display = 'block';
@@ -89,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             saveScore(username, score);
             displayScores();
         }
-    }
+    }    
 
     function saveScore(name, score) {
         let scores = JSON.parse(localStorage.getItem('quizScores')) || [];
