@@ -22,5 +22,21 @@
     {
         "question": "¿Cual es el nombre del músculo del cuello que permite los movimientos de la cabeza y que se inserta en la clavícula, esternón y la apófisis mastoides?",
         "answer": "Esternocleidomastoideo"
+    },
+    {
+        "question": "¿Cuál es el planeta más grande del sistema solar?",
+        "answer": "Júpiter"
+    },
+    {
+        "question": "¿En qué continente se encuentra Egipto?",
+        "answer": "África"
+    },
+    {
+        "question": "¿Cuál es el símbolo químico del oro?",
+        "answer": "Au"
+    },
+    {
+        "question": "¿Cuál es el río más largo del mundo?",
+        "answer": "Nilo"
     }
 ]

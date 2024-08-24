@@ -69,38 +69,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function endQuiz() {
-        if (score === questions.length * 5) {
-            Swal.fire({
-                title: '¡Felicidades!',
-                text: '¡Completaste el quiz con todas las respuestas correctas!',
-                icon: 'success',
-                confirmButtonText: 'Ver puntaje',
-                customClass: {
-                    popup: 'my-popup',
-                    title: 'my-title', 
-                    text: 'my-text',
-                    confirmButton: 'my-button'
-                }
-            }).then(() => {
-                document.getElementById('quiz-card').style.display = 'none';
-                document.getElementById('final-score-card').style.display = 'block';
-                document.getElementById('score').textContent = score;
-                saveScore(username, score);
-                displayScores();
-            });
-        } else {
+        // Calcular el puntaje máximo posible
+        const maxScore = questions.length * 5;
+
+        console.log(`Puntaje actual: ${score}`); // Verifica el puntaje actual
+        console.log(`Puntaje máximo: ${maxScore}`); // Verifica el puntaje máximo
+
+        Swal.fire({
+            title: score === maxScore ? '¡Felicidades!' : 'Quiz terminado',
+            text: score === maxScore ? '¡Completaste el quiz con todas las respuestas correctas!' : `Tu puntaje es ${score}`,
+            icon: score === maxScore ? 'success' : 'info',
+            confirmButtonText: 'Ver puntaje',
+            customClass: {
+                popup: 'my-popup',
+                title: 'my-title', 
+                text: 'my-text',
+                confirmButton: 'my-button'
+            }
+        }).then(() => {
             document.getElementById('quiz-card').style.display = 'none';
             document.getElementById('final-score-card').style.display = 'block';
-            document.getElementById('score').textContent = score;
+            document.getElementById('score').textContent = score; // Mostrar el puntaje correcto
             saveScore(username, score);
             displayScores();
-        }
-    }    
+        });
+    }
 
     function saveScore(name, score) {
         let scores = JSON.parse(localStorage.getItem('quizScores')) || [];
         scores.push({ name: name, score: score });
         localStorage.setItem('quizScores', JSON.stringify(scores));
+        console.log(`Puntajes guardados: ${JSON.stringify(scores)}`); // Verifica los puntajes guardados
     }
 
     function displayScores() {
