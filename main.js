@@ -69,12 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function endQuiz() {
-        // Calcular el puntaje máximo posible
         const maxScore = questions.length * 5;
-
-        console.log(`Puntaje actual: ${score}`); // Verifica el puntaje actual
-        console.log(`Puntaje máximo: ${maxScore}`); // Verifica el puntaje máximo
-
+        console.log(`Puntaje actual: ${score}`); 
+        console.log(`Puntaje máximo: ${maxScore}`); 
         Swal.fire({
             title: score === maxScore ? '¡Felicidades!' : 'Quiz terminado',
             text: score === maxScore ? '¡Completaste el quiz con todas las respuestas correctas!' : `Tu puntaje es ${score}`,
@@ -89,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }).then(() => {
             document.getElementById('quiz-card').style.display = 'none';
             document.getElementById('final-score-card').style.display = 'block';
-            document.getElementById('score').textContent = score; // Mostrar el puntaje correcto
+            document.getElementById('score').textContent = score;
             saveScore(username, score);
             displayScores();
         });
@@ -99,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let scores = JSON.parse(localStorage.getItem('quizScores')) || [];
         scores.push({ name: name, score: score });
         localStorage.setItem('quizScores', JSON.stringify(scores));
-        console.log(`Puntajes guardados: ${JSON.stringify(scores)}`); // Verifica los puntajes guardados
+        console.log(`Puntajes guardados: ${JSON.stringify(scores)}`);
     }
 
     function displayScores() {
