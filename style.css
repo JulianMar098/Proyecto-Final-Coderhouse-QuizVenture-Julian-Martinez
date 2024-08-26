@@ -107,6 +107,8 @@ button:hover {
 .my-popup {
     background: linear-gradient(to right, #9307a5dc, #ff00ff);
     border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .my-title {
